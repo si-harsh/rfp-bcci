@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL</title>
+    <!-- <link rel="stylesheet" href="/assets/css/styles.css?v=1.5"> -->
+    <link rel="stylesheet" href="/ipl/assets/css/login.css?v=1.11">
+</head>
+
+<body>
+    <div class="main">
+        <!-- header -->
+        <nav class="navbar">
+            <!-- <div class="navbar__logo">
+                <img src="/ipl/assets/images/ipl-n.png?v=1.1" alt="Indian Premier League Logo">
+            </div> -->
+            <div class="navbar__actions">
+                <div class="navbar__logo">
+                    <img src="/ipl/assets/images/ipl-n.png?v=1.1" alt="Indian Premier League Logo">
+                </div>
+                <div class="nav-actions-wrap">
+                    <div class="nav-border">
+                        <div class="navbar__switch" id="theme-toggle" tabindex="0" aria-label="Toggle light/dark mode">
+                            <span class="toggle-knob">
+                                <span class="icon-sun">
+                                    <!-- Sun SVG -->
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="9" cy="9" r="4" stroke="white" stroke-width="2" fill="none" />
+                                        <g stroke="white" stroke-width="2">
+                                            <line x1="9" y1="1" x2="9" y2="3" />
+                                            <line x1="9" y1="15" x2="9" y2="17" />
+                                            <line x1="1" y1="9" x2="3" y2="9" />
+                                            <line x1="15" y1="9" x2="17" y2="9" />
+                                            <line x1="3.64" y1="3.64" x2="5.05" y2="5.05" />
+                                            <line x1="12.95" y1="12.95" x2="14.36" y2="14.36" />
+                                            <line x1="3.64" y1="14.36" x2="5.05" y2="12.95" />
+                                            <line x1="12.95" y1="5.05" x2="14.36" y2="3.64" />
+                                        </g>
+                                    </svg>
+                                </span>
+                                </span>
+                                <span class="toggle-knob toggle-knob-dark">
+                                    <span class="icon-moon">
+                                        <!-- Moon SVG -->
+                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.5 11.5A6 6 0 016.5 3.5a5 5 0 108 8z" stroke="white"
+                                                stroke-width="2" fill="none" />
+                                        </svg>
+                                    </span>
+                                </span>
+                               
+                            </span>
+                        </div>
+                    </div>
+                    <div class="navbar__profile">
+                        <a href="/ipl/login.html">
+                            <!-- User profile SVG icon -->
+                            <img src="/ipl/assets/images/user.png?v=1.1" alt="User Profile">
+                        </a>
+                    </div>
+                </div>
+                <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false"
+                    aria-controls="navbar-menu">
+                    <span class="icon-hamburger">
+                        <!-- Hamburger SVG -->
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect y="6" width="28" height="2.5" rx="1.25" fill="white" />
+                            <rect y="13" width="28" height="2.5" rx="1.25" fill="white" />
+                            <rect y="20" width="28" height="2.5" rx="1.25" fill="white" />
+                        </svg>
+                    </span>
+                    <span class="icon-close">
+                        <!-- Close SVG -->
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="6" y1="6" x2="22" y2="22" stroke="white" stroke-width="2.5"
+                                stroke-linecap="round" />
+                            <line x1="22" y1="6" x2="6" y2="22" stroke="white" stroke-width="2.5"
+                                stroke-linecap="round" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+            <div class="navbar__menu" id="navbar-menu">
+                <div class="navbar__search">
+                    <input type="text" placeholder="Search and press Enter" />
+                    <span class="navbar__search-icon">
+                        <!-- Search SVG -->
+                        <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
+                            <circle cx="9" cy="9" r="7" stroke="#888" stroke-width="2" />
+                            <line x1="14.5" y1="14.5" x2="19" y2="19" stroke="#888" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </span>
+                </div>
+                <ul class="navbar__links">
+                    <li class="active"><a href="#">HOME</a></li>
+                    <li><a href="#">MATCHES</a></li>
+                    <li><a href="#">POINTS TABLE</a></li>
+                    <li class="has-submenu">
+                        <div class="navbar__submenu-header">
+                            <a href="#">TEAMS</a>
+                            <span class="chevron">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <polyline points="4,6 8,10 12,6" stroke="var(--chevron-stroke, #222)"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="navbar__submenu">
+                            <ul>
+                                <li><a href="#">Mumbai Indians</a></li>
+                                <li><a href="#">Chennai Super Kings</a></li>
+                                <li><a href="#">Royal Challengers Bangalore</a></li>
+                                <li><a href="#">Kolkata Knight Riders</a></li>
+                                <li><a href="#">Delhi Capitals</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">FANTASY</a></li>
+                    <li class="has-submenu">
+                        <div class="navbar__submenu-header">
+                            <a href="#">VIDEOS</a>
+                            <span class="chevron">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <polyline points="4,6 8,10 12,6" stroke="var(--chevron-stroke, #222)"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="navbar__submenu">
+                            <ul>
+                                <li><a href="#">Match Highlights</a></li>
+                                <li><a href="#">Player Interviews</a></li>
+                                <li><a href="#">Behind the Scenes</a></li>
+                                <li><a href="#">Best Moments</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">NEWS</a></li>
+                    <li class="has-submenu">
+                        <div class="navbar__submenu-header">
+                            <a href="#">STATS</a>
+                            <span class="chevron">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <polyline points="4,6 8,10 12,6" stroke="var(--chevron-stroke, #222)"
+                                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="navbar__submenu">
+                            <ul>
+                                <li><a href="#">Player Stats</a></li>
+                                <li><a href="#">Team Stats</a></li>
+                                <li><a href="#">Season Records</a></li>
+                                <li><a href="#">All Time Records</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="navbar__menu-footer">
+                    <div class="bcci-tv-box">
+                        <img src="/ipl/assets/images/bcci.svg" alt="BCCI TV" />
+                        <!-- <span>BCCI.TV</span> -->
+                        <span class="divider"></span>
+                        <img src="/ipl/assets/images/wpl.svg" alt="WPL" />
+                    </div>
+                    <div class="navbar__footer-row">
+                        <div class="navbar__socials">
+                            <a href="#" aria-label="Facebook">
+                                <!-- Facebook SVG -->
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <title>Facebook</title>
+                                    <rect width="20" height="20" rx="4" fill="#3050A6" />
+                                    <path
+                                        d="M13.5 10.5H11.5V17H9V10.5H7.5V8.5H9V7.5C9 6.11929 10.1193 5 11.5 5H13V7H12C11.7239 7 11.5 7.22386 11.5 7.5V8.5H13L12.5 10.5Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <!-- Instagram SVG -->
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <title>Instagram</title>
+                                    <rect width="20" height="20" rx="4" fill="#3050A6" />
+                                    <rect x="5" y="5" width="10" height="10" rx="3" stroke="white" stroke-width="1.5" />
+                                    <circle cx="10" cy="10" r="2.5" stroke="white" stroke-width="1.5" />
+                                    <circle cx="13.5" cy="6.5" r="0.7" fill="white" />
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Twitter">
+                                <!-- Twitter/X SVG -->
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <title>X (Twitter)</title>
+                                    <rect width="20" height="20" rx="4" fill="#3050A6" />
+                                    <path d="M6 6L14 14M14 6L6 14" stroke="white" stroke-width="1.5"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="navbar__footer-actions">
+                            <button>FAN POLL</button>
+                            <button>VIEWERS CHOICE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Desktop Navbar (hidden on mobile) -->
+        <nav class="navbar__desktop">
+            <div class="navbar__desktop-top">
+                <div class="navbar__desktop-bcci">
+                    <img src="/ipl/assets/images/bcci.svg" alt="BCCI TV" />
+                    BCCI TV
+                    <span class="navbar__desktop-wpl">
+                        <img src="/ipl/assets/images/wpl.svg" alt="WPL" />
+                    </span>
+                </div>
+                <div class="navbar__desktop-meta">
+                    <div class="navbar__desktop-socials">
+                        <a href="#" aria-label="Facebook">
+                            <!-- Facebook SVG -->
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>Facebook</title>
+                                <rect width="20" height="20" rx="4" fill="#3050A6" />
+                                <path
+                                    d="M13.5 10.5H11.5V17H9V10.5H7.5V8.5H9V7.5C9 6.11929 10.1193 5 11.5 5H13V7H12C11.7239 7 11.5 7.22386 11.5 7.5V8.5H13L12.5 10.5Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <!-- Instagram SVG -->
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>Instagram</title>
+                                <rect width="20" height="20" rx="4" fill="#3050A6" />
+                                <rect x="5" y="5" width="10" height="10" rx="3" stroke="white" stroke-width="1.5" />
+                                <circle cx="10" cy="10" r="2.5" stroke="white" stroke-width="1.5" />
+                                <circle cx="13.5" cy="6.5" r="0.7" fill="white" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <!-- Twitter/X SVG -->
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>X (Twitter)</title>
+                                <rect width="20" height="20" rx="4" fill="#3050A6" />
+                                <path d="M6 6L14 14M14 6L6 14" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </a>
+                    </div>
+                    <a href="#" class="navbar__desktop-tickets">GET TICKETS</a>
+                    <div class="navbar__switch" id="theme-toggle-desktop" tabindex="0"
+                        aria-label="Toggle light/dark mode">
+                        <!-- Sun/Moon SVGs as before -->
+                    </div>
+                    <div class="navbar__profile">
+                        <!-- User SVG as before -->
+                    </div>
+                </div>
+            </div>
+            <div class="navbar__desktop-bottom">
+                <ul class="navbar__desktop-links">
+                    <li><a href="#">MATCHES</a></li>
+                    <li><a href="#">POINTS TABLE</a></li>
+                    <li><a href="#">TEAMS</a></li>
+                    <li><a href="#">FANTASY</a></li>
+                </ul>
+                <div class="navbar__desktop-actions">
+                    <button>FAN POLL</button>
+                    <button>VIEWERS CHOICE</button>
+                    <button class="navbar__desktop-hamburger" id="desktop-hamburger" aria-label="Open mobile menu">
+                        <!-- Hamburger SVG as before -->
+                    </button>
+                    <div class="navbar__desktop-search">
+                        <input type="text" placeholder="Search and press Enter" />
+                        <span class="navbar__search-icon">
+                            <!-- Search SVG as before -->
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="login-container">
+
+            <div class="login-ipl-logo">
+                <img src="/ipl/assets/images/tata-ipl-logo.svg" alt="Tata IPL Logo">
+            </div>
+
+            <!-- OTP Verification Form -->
+            <div class="login-form-container login-otp-container">
+                <div class="login-formlogin-otp-form">                    
+                    
+                    <h2 class="main-title login-otp-title">OTP VERIFICATION</h2>
+                    
+                    <p class="login-otp-description">
+                        Enter the OTP sent to 9167616039. Be careful not to share the code with anyone.
+                    </p>
+                    
+                    <div class="login-otp-inputs">
+                        <input id="otp-input-1" type="text" class="login-otp-input" maxlength="1" value="4">
+                        <input id="otp-input-2" type="text" class="login-otp-input" maxlength="1" value="4">
+                        <input id="otp-input-3" type="text" class="login-otp-input" maxlength="1" value="5">
+                        <input id="otp-input-4" type="text" class="login-otp-input" maxlength="1" value="5">
+                        <input id="otp-input-5" type="text" class="login-otp-input" maxlength="1" value="1">
+                        <input id="otp-input-6" type="text" class="login-otp-input" maxlength="1" value="2">
+                    </div>
+                    
+                    <div class="login-otp-resend">
+                        <span>Didn't receive the OTP?</span>
+                        <button class="login-otp-resend-btn">Resend OTP</button>
+                    </div>
+                    
+                    <div class="login-otp-timer">
+                        Time Remaining : <span class="timer">20 sec</span>
+                    </div>
+                    
+                    <div class="login-otp-disclaimers">
+                        <div class="login-otp-disclaimer-item">          
+                            <input type="checkbox" id="disclaimer2" class="login-otp-disclaimer-checkbox">
+                            <label for="disclaimer2" class="login-otp-disclaimer-text">                 
+                                Disclaimer: Your information may be used by IPL and made available to our sponsors and third-parties to provide you with news and promotional information about IPL. For further information, please consult our Online Privacy Policy. <a href="#" class="privacy-link">Privacy Policy</a>.
+                            </label>
+                        </div>
+                        
+                        <div class="login-otp-disclaimer-item">
+                            <input type="checkbox" id="disclaimer2" class="login-otp-disclaimer-checkbox">
+                            <label for="disclaimer2" class="login-otp-disclaimer-text">
+                                I acknowledge that I have read and agree to the <a href="#" class="terms-link">Terms Of Services</a> and <a href="#" class="privacy-link">Privacy Policy</a>.
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button class="login-button login-verify-btn"><span>VERIFY & PROCEED</span></button>
+                </div>
+            </div>
+
+            <!-- Profile Completion Form -->
+            <div class="login-form-container login-profile-container">
+                <div class="login-form login-profile-form">
+                    
+                    <h2 class="main-title login-profile-title">COMPLETE YOUR PROFILE</h2>
+                    
+                    <form class="login-profile-form-fields">
+                        <div class="login-profile-form-group">
+                            <label for="firstName" class="login-profile-form-label">First Name<span>*</span></label>
+                            <input type="text" id="firstName" name="firstName" class="login-profile-form-input" placeholder="Enter your first name" required>
+                        </div>
+                        
+                        <div class="login-profile-form-group">
+                            <label for="lastName" class="login-profile-form-label">Last Name<span>*</span></label>
+                            <input type="text" id="lastName" name="lastName" class="login-profile-form-input" placeholder="Enter your last name" required>
+                        </div>
+                        
+                        <div class="login-profile-form-group">
+                            <label for="mobileNo" class="login-profile-form-label">Mobile No.</label>
+                            <input type="tel" id="mobileNo" name="mobileNo" class="login-profile-form-input" value="9038344321" readonly>
+                            <div class="login-verified-badge">
+                                <span class="login-verified-icon"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="login-profile-form-group">
+                            <label for="country" class="login-profile-form-label">Country<span>*</span></label>
+                            <select id="country" name="country" class="login-profile-form-select" required>
+                                <option value="india" selected>India</option>
+                                <option value="usa">United States</option>
+                                <option value="uk">United Kingdom</option>
+                                <option value="australia">Australia</option>
+                                <option value="canada">Canada</option>
+                            </select>
+                        </div>
+                        
+                        <div class="login-profile-form-group">
+                            <label for="city" class="login-profile-form-label">City<span>*</span></label>
+                            <select id="city" name="city" class="login-profile-form-select" required>
+                                <option value="">Enter your City</option>
+                                <option value="mumbai">Mumbai</option>
+                                <option value="delhi">Delhi</option>
+                                <option value="bangalore">Bangalore</option>
+                                <option value="chennai">Chennai</option>
+                                <option value="kolkata">Kolkata</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="login-button login-submit-btn"><span>SUBMIT</span></button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Team Preferences Section -->
+            <div class="login-form-container login-preferences-container">
+                <div class="login-form login-preferences-form">
+                    <h2 class="main-title login-preferences-title">MY PREFERENCES</h2>
+                    <p class="login-preferences-subtitle">Select your Favourite Team</p>
+                    
+                    <div class="login-team-list">
+                        <div class="login-team-card login-team-card-grey" data-team="chennai-super-kings">
+                            <img src="/ipl/assets/images/teams/csk-logo.png?v=1.1" alt="Chennai Super Kings">
+                        </div>
+                        <div class="login-team-card" data-team="delhi-capitals">
+                            <img src="/ipl/assets/images/teams/dc-logo.png?v=1.1" alt="Delhi Capitals">
+                        </div>
+                        <div class="login-team-card login-team-card-grey" data-team="gujarat-titans">
+                            <img src="/ipl/assets/images/teams/gt-logo.png?v=1.1" alt="Gujarat Titans">
+                        </div>
+                        <div class="login-team-card" data-team="punjab-kings">
+                            <img src="/ipl/assets/images/teams/pbks-logo.png?v=1.1" alt="Punjab Kings">
+                        </div>
+                        <div class="login-team-card" data-team="lucknow-super-giants">
+                            <img src="/ipl/assets/images/teams/lsg-logo.png?v=1.1" alt="Lucknow Super Giants">
+                        </div>
+                        <div class="login-team-card login-team-card-grey" data-team="royal-challengers-bangalore">
+                            <img src="/ipl/assets/images/teams/rcb-logo.png?v=1.1" alt="Royal Challengers Bangalore">
+                        </div>
+                        <div class="login-team-card active" data-team="mumbai-indians">
+                            <img src="/ipl/assets/images/teams/mi-logo.png?v=1.1" alt="Mumbai Indians">
+                        </div>
+                        <div class="login-team-card login-team-card-grey" data-team="rajasthan-royals">
+                            <img src="/ipl/assets/images/teams/rr-logo.png?v=1.1" alt="Rajasthan Royals">
+                        </div>
+                        <div class="login-team-card login-team-card-grey" data-team="kolkata-knight-riders">
+                            <img src="/ipl/assets/images/teams/kkr-logo.png?v=1.1" alt="Kolkata Knight Riders">
+                        </div>
+                        <div class="login-team-card" data-team="sunrisers-hyderabad">
+                            <img src="/ipl/assets/images/teams/srh-logo.png?v=1.1" alt="Sunrisers Hyderabad">
+                        </div>
+                    </div>
+                    
+                    <button class="login-button login-continue-btn"><span>CONTINUE</span></button>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    <script>
+        const toggleBtn = document.querySelector('.navbar__toggle');
+        const menu = document.getElementById('navbar-menu');
+        const iconHamburger = toggleBtn.querySelector('.icon-hamburger');
+        const iconClose = toggleBtn.querySelector('.icon-close');
+        const themeToggle = document.getElementById('theme-toggle');
+        const iconSun = themeToggle.querySelector('.toggle-knob');
+        const iconMoon = themeToggle.querySelector('.toggle-knob.toggle-knob-dark');
+
+        function updateIcons() {
+            if (menu.classList.contains('open')) {
+                iconHamburger.style.display = 'none';
+                iconClose.style.display = 'flex';
+                toggleBtn.setAttribute('aria-expanded', 'true');
+            } else {
+                iconHamburger.style.display = 'flex';
+                iconClose.style.display = 'none';
+                toggleBtn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        toggleBtn.addEventListener('click', function () {
+            menu.classList.toggle('open');
+            updateIcons();
+        });
+
+        // Set initial icon state
+        iconClose.style.display = 'none';
+        menu.classList.remove('open');
+
+        // Light/Dark mode toggle
+        function setTheme(isDark) {
+            document.body.classList.toggle('dark-mode', isDark);
+            iconSun.style.display = isDark ? 'none' : 'flex';
+            iconMoon.style.display = isDark ? 'flex' : 'none';
+        }
+        let dark = false;
+        themeToggle.addEventListener('click', function () {
+            dark = !dark;
+            setTheme(dark);
+        });
+        themeToggle.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                dark = !dark;
+                setTheme(dark);
+            }
+        });
+        // Initial state
+        setTheme(false);
+
+        // Team selection functionality
+        const teamCards = document.querySelectorAll('.login-team-card');
+        
+        teamCards.forEach(card => {
+            card.addEventListener('click', function() {
+                // Remove active class from all cards
+                teamCards.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked card
+                this.classList.add('active');
+                
+                // Store selected team (optional)
+                const selectedTeam = this.getAttribute('data-team');
+                console.log('Selected team:', selectedTeam);
+            });
+        });
+
+        // User journey flow functionality
+        const otpContainer = document.querySelector('.login-otp-container');
+        const profileContainer = document.querySelector('.login-profile-container');
+        const preferencesContainer = document.querySelector('.login-preferences-container');
+        
+        const verifyBtn = document.querySelector('.login-verify-btn');
+        const submitBtn = document.querySelector('.login-submit-btn');
+        const continueBtn = document.querySelector('.login-continue-btn');
+
+        // Function to show only one container and hide others
+        function showOnlyContainer(containerToShow) {
+            // Hide all containers
+            otpContainer.style.display = 'none';
+            profileContainer.style.display = 'none';
+            preferencesContainer.style.display = 'none';
+            
+            // Show the target container
+            containerToShow.style.display = 'flex';
+        }
+
+        // OTP Verification -> Profile Completion
+        verifyBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showOnlyContainer(profileContainer);
+        });
+
+        // Profile Completion -> Team Preferences
+        submitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showOnlyContainer(preferencesContainer);
+        });
+
+        // Team Preferences -> Homepage
+        continueBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Redirect to homepage
+            window.location.href = '/ipl/post-login.html';
+        });
+
+    </script>
+</body>
+
+</html>
