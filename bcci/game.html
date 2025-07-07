@@ -2,209 +2,296 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="robots" content="index, follow">
-    <meta name="description" content="BCCI">
-    <title>BCCI</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200;300;400;500;600;700&family=Fjalla+One&family=Bebas+Neue:wght@400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="/bcci/assets/css/style.css?v=1.7">
-    <link rel="stylesheet" href="/bcci/assets/css/style.css?v=3.3">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="BCCI" />
+  <link rel="icon" href="/bcci/assets/images/logo.png" type="image/x-icon">
+  <title>BCCI</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200;300;400;500;600;700&family=Fjalla+One&family=Bebas+Neue:wght@400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/bcci/assets/css/style.css?v=1.7" />
+  <link rel="stylesheet" href="/bcci/assets/css/style.css?v=3.3" />
+  <script>
+    window.webConfig = {
+      trackingConfig: {
+        moengage: {
+          app_id: "184J7O8MGDQR8LO6VEE15RPH",
+          debug_logs: 0,
+          cluster: "DC_3",
+          enableSPA: true,
+        },
+      },
+      moEngage: {
+        events: {},
+      },
+    };
+
+    const initializeMoEngage = () => {
+      (function (i, s, o, g, r, a, m, n) {
+        i.moengage_object = r;
+        t = {};
+        q = function (f) {
+          return function () {
+            (i.moengage_q = i.moengage_q || []).push({ f: f, a: arguments });
+          };
+        };
+        (f = [
+          "track_event",
+          "add_user_attribute",
+          "add_first_name",
+          "add_last_name",
+          "add_email",
+          "add_mobile",
+          "add_user_name",
+          "add_gender",
+          "add_birthday",
+          "destroy_session",
+          "add_unique_user_id",
+          "moe_events",
+          "call_web_push",
+          "track",
+          "location_type_attribute",
+        ]),
+          (h = { onsite: ["getData", "registerCallback"] });
+        for (k in f) {
+          t[f[k]] = q(f[k]);
+        }
+        for (k in h)
+          for (l in h[k]) {
+            null == t[k] && (t[k] = {}),
+              (t[k][h[k][l]] = q(k + "." + h[k][l]));
+          }
+        a = s.createElement(o);
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+        i.moe =
+          i.moe ||
+          function () {
+            n = arguments[0];
+            return t;
+          };
+        a.onload = function () {
+          if (n) {
+            i[r] = moe(n);
+          }
+        };
+      })(
+        window,
+        document,
+        "script",
+        "https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js",
+        "Moengage"
+      );
+      // if (window.location.origin.includes("stg")) {
+      // window.webConfig.trackingConfig.moengage.debug_logs = '1';
+      // }
+      Moengage = moe(window.webConfig.trackingConfig.moengage);
+    };
+
+    initializeMoEngage();
+  </script>
+  <link href="https://demo.sportz.io/bcci/games/main.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="main">
-        <div id="root"></div>
-        <!-- Footer Section -->
-        <footer class="footer-section">
-            <!-- Top Footer with Social Links -->
-            <div class="footer-top">
-                <div class="footer-social-section">
-                    <div class="footer-logo">
-                        <img src="/bcci/assets/images/logo.png" alt="BCCI Logo" class="footer-bcci-logo">
-                    </div>
-                    <div class="footer-links-text">
-                        <div class="footer-links-text-container">
-                            <a href="#" class="footer-link">Copyrights</a>
-                            <span class="footer-separator">|</span>
-                            <a href="#" class="footer-link">Terms And Conditions</a>
-                            <span class="footer-separator">|</span>
-                            <a href="#" class="footer-link">Privacy And Policy</a>
-                        </div>
-                    </div>
-                    <div class="footer-social-icons">
-                        <a href="#" class="social-icon facebook" aria-label="Facebook">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon instagram" aria-label="Instagram">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-2.504 0-4.534-2.03-4.534-4.534s2.03-4.534 4.534-4.534 4.534 2.03 4.534 4.534-2.03 4.534-4.534 4.534zm7.119 0c-2.504 0-4.534-2.03-4.534-4.534s2.03-4.534 4.534-4.534 4.534 2.03 4.534 4.534-2.03 4.534-4.534 4.534z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon twitter" aria-label="X (Twitter)">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon youtube" aria-label="YouTube">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+  <div class="main-container">
+    <div id="root"></div>
+    <!-- Footer Section -->
+    <footer class="footer-section">
+      <!-- Top Footer with Social Links -->
+      <div class="footer-top">
+        <div class="footer-social-section">
+          <div class="footer-logo">
+            <img src="/bcci/assets/images/logo.png" alt="BCCI Logo" class="footer-bcci-logo" />
+          </div>
+          <div class="footer-links-text">
+            <div class="footer-links-text-container">
+              <a href="#" class="footer-link">Copyrights</a>
+              <span class="footer-separator">|</span>
+              <a href="#" class="footer-link">Terms And Conditions</a>
+              <span class="footer-separator">|</span>
+              <a href="#" class="footer-link">Privacy And Policy</a>
             </div>
-            <!-- Sponsors Section -->
-            <div class="footer-sponsors">
-                <div class="sponsor-group">
-                    <h4 class="sponsor-title">TITLE SPONSOR</h4>
-                    <div class="sponsor-logo">
-                        <img src="/bcci/assets/images/idfc-bank.png" alt="IDFC FIRST Bank">
-                    </div>
-                </div>
-                <div class="sponsor-group">
-                    <h4 class="sponsor-title">LEAD SPONSOR</h4>
-                    <div class="sponsor-logo">
-                        <img src="/bcci/assets/images/dream11.png" width="120px" alt="Dream11">
-                    </div>
-                </div>
-                <div class="sponsor-group">
-                    <h4 class="sponsor-title">KIT SPONSOR</h4>
-                    <div class="sponsor-logo">
-                        <img src="/bcci/assets/images/kit.png" width="50px" alt="adidas">
-                    </div>
-                </div>
-                <div class="sponsor-group official-partners">
-                    <h4 class="sponsor-title">OFFICIAL PARTNERS</h4>
-                    <div class="sponsor-logos-row">
-                        <img src="/bcci/assets/images/sbi-life.png" alt="SBI Life">
-                        <img src="/bcci/assets/images/campus.png" alt="CAMPUS">
-                        <img src="/bcci/assets/images/atomberg.png" alt="atomberg">
-                    </div>
-                </div>
-                <div class="sponsor-group">
-                    <h4 class="sponsor-title">OFFICIAL BROADCASTER</h4>
-                    <div class="sponsor-logo">
-                        <img src="/bcci/assets/images/star-sports.png" alt="Star Sports">
-                    </div>
-                </div>
-                <div class="sponsor-group">
-                    <h4 class="sponsor-title">OFFICIAL DIGITAL STREAMING PARTNER</h4>
-                    <div class="sponsor-logo">
-                        <img src="/bcci/assets/images/jio-hotstar.png" alt="JioHotstar">
-                    </div>
-                </div>
+          </div>
+          <div class="footer-social-icons">
+            <a href="#" class="social-icon facebook" aria-label="Facebook">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon instagram" aria-label="Instagram">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-2.504 0-4.534-2.03-4.534-4.534s2.03-4.534 4.534-4.534 4.534 2.03 4.534 4.534-2.03 4.534-4.534 4.534zm7.119 0c-2.504 0-4.534-2.03-4.534-4.534s2.03-4.534 4.534-4.534 4.534 2.03 4.534 4.534-2.03 4.534-4.534 4.534z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon twitter" aria-label="X (Twitter)">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="#" class="social-icon youtube" aria-label="YouTube">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Sponsors Section -->
+      <div class="footer-sponsors">
+        <div class="sponsor-group">
+          <h4 class="sponsor-title">TITLE SPONSOR</h4>
+          <div class="sponsor-logo">
+            <img src="/bcci/assets/images/idfc-bank.png" alt="IDFC FIRST Bank" />
+          </div>
+        </div>
+        <div class="sponsor-group">
+          <h4 class="sponsor-title">LEAD SPONSOR</h4>
+          <div class="sponsor-logo">
+            <img src="/bcci/assets/images/dream11.png" width="120px" alt="Dream11" />
+          </div>
+        </div>
+        <div class="sponsor-group">
+          <h4 class="sponsor-title">KIT SPONSOR</h4>
+          <div class="sponsor-logo">
+            <img src="/bcci/assets/images/kit.png" width="50px" alt="adidas" />
+          </div>
+        </div>
+        <div class="sponsor-group official-partners">
+          <h4 class="sponsor-title">OFFICIAL PARTNERS</h4>
+          <div class="sponsor-logos-row">
+            <img src="/bcci/assets/images/sbi-life.png" alt="SBI Life" />
+            <img src="/bcci/assets/images/campus.png" alt="CAMPUS" />
+            <img src="/bcci/assets/images/atomberg.png" alt="atomberg" />
+          </div>
+        </div>
+        <div class="sponsor-group">
+          <h4 class="sponsor-title">OFFICIAL BROADCASTER</h4>
+          <div class="sponsor-logo">
+            <img src="/bcci/assets/images/star-sports.png" alt="Star Sports" />
+          </div>
+        </div>
+        <div class="sponsor-group">
+          <h4 class="sponsor-title">OFFICIAL DIGITAL STREAMING PARTNER</h4>
+          <div class="sponsor-logo">
+            <img src="/bcci/assets/images/jio-hotstar.png" alt="JioHotstar" />
+          </div>
+        </div>
+      </div>
+      <!-- Main Footer Content -->
+      <div class="footer-main">
+        <!-- Contact Us -->
+        <div class="footer-column">
+          <h3 class="footer-heading">CONTACT US</h3>
+          <address class="footer-address">
+            4th Floor, Cricket Centre,<br />
+            Wankhede Stadium 'D' Road,<br />
+            Churchgate, Mumbai - 400020, India.<br /><br />
+            Email: Office@Bcci.Tv<br />
+            T: +91 22 67938500<br />
+            F: +91 22 61582300
+          </address>
+        </div>
+        <!-- Matches -->
+        <div class="footer-column">
+          <h3 class="footer-heading">MATCHES</h3>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Domestic</a></li>
+            <li><a href="#" class="footer-link">International</a></li>
+          </ul>
+        </div>
+        <!-- Videos -->
+        <div class="footer-column">
+          <h3 class="footer-heading">VIDEOS</h3>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Latest</a></li>
+            <li><a href="#" class="footer-link">Highlights</a></li>
+            <li>
+              <a href="#" class="footer-link">Features And Interviews</a>
+            </li>
+            <li><a href="#" class="footer-link">Press Conferences</a></li>
+          </ul>
+        </div>
+        <!-- News -->
+        <div class="footer-column">
+          <h3 class="footer-heading">NEWS</h3>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Latest</a></li>
+            <li><a href="#" class="footer-link">Press Releases</a></li>
+            <li>
+              <a href="#" class="footer-link">Features And Interviews</a>
+            </li>
+            <li><a href="#" class="footer-link">BCCI News</a></li>
+          </ul>
+        </div>
+        <!-- More -->
+        <div class="footer-column">
+          <h3 class="footer-heading">MORE</h3>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">IPL</a></li>
+            <li><a href="#" class="footer-link">WPL</a></li>
+            <li><a href="#" class="footer-link">Venues</a></li>
+            <li><a href="#" class="footer-link">Galleries</a></li>
+            <li><a href="#" class="footer-link">Jobs</a></li>
+            <li><a href="#" class="footer-link">Tender</a></li>
+            <li><a href="#" class="footer-link">Playing Conditions</a></li>
+          </ul>
+        </div>
+        <!-- About -->
+        <div class="footer-column">
+          <h3 class="footer-heading">ABOUT</h3>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">History</a></li>
+            <li><a href="#" class="footer-link">Anti Corruption</a></li>
+            <li><a href="#" class="footer-link">Anti Racism</a></li>
+            <li><a href="#" class="footer-link">Anti Doping</a></li>
+            <li><a href="#" class="footer-link">RTI Application Form</a></li>
+            <li><a href="#" class="footer-link">Annual Reports</a></li>
+            <li><a href="#" class="footer-link">MCC Laws of Cricket</a></li>
+          </ul>
+        </div>
+        <!-- BCCI -->
+        <div class="footer-column">
+          <h3 class="footer-heading">BCCI</h3>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Men</a></li>
+            <li><a href="#" class="footer-link">Women</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <div class="footer-bottom">
+            <div class="footer-bottom-links">
+              <a href="#" class="footer-link">Terms & Conditions</a>
+              <span class="footer-separator">|</span>
+              <a href="#" class="footer-link">Privacy Policy</a>
             </div>
-            <!-- Main Footer Content -->
-            <div class="footer-main">
-                <!-- Contact Us -->
-                <div class="footer-column">
-                    <h3 class="footer-heading">CONTACT US</h3>
-                    <address class="footer-address">
-                        4th Floor, Cricket Centre,<br>
-                        Wankhede Stadium 'D' Road,<br>
-                        Churchgate, Mumbai - 400020, India.<br><br>
-                        Email: Office@Bcci.Tv<br>
-                        T: +91 22 67938500<br>
-                        F: +91 22 61582300
-                    </address>
-                </div>
-                <!-- Matches -->
-                <div class="footer-column">
-                    <h3 class="footer-heading">MATCHES</h3>
-                    <ul class="footer-list">
-                        <li><a href="#" class="footer-link">Domestic</a></li>
-                        <li><a href="#" class="footer-link">International</a></li>
-                    </ul>
-                </div>
-                <!-- Videos -->
-                <div class="footer-column">
-                    <h3 class="footer-heading">VIDEOS</h3>
-                    <ul class="footer-list">
-                        <li><a href="#" class="footer-link">Latest</a></li>
-                        <li><a href="#" class="footer-link">Highlights</a></li>
-                        <li><a href="#" class="footer-link">Features And Interviews</a></li>
-                        <li><a href="#" class="footer-link">Press Conferences</a></li>
-                    </ul>
-                </div>
-                <!-- News -->
-                <div class="footer-column">
-                    <h3 class="footer-heading">NEWS</h3>
-                    <ul class="footer-list">
-                        <li><a href="#" class="footer-link">Latest</a></li>
-                        <li><a href="#" class="footer-link">Press Releases</a></li>
-                        <li><a href="#" class="footer-link">Features And Interviews</a></li>
-                        <li><a href="#" class="footer-link">BCCI News</a></li>
-                    </ul>
-                </div>
-                <!-- More -->
-                <div class="footer-column">
-                    <h3 class="footer-heading">MORE</h3>
-                    <ul class="footer-list">
-                        <li><a href="#" class="footer-link">IPL</a></li>
-                        <li><a href="#" class="footer-link">WPL</a></li>
-                        <li><a href="#" class="footer-link">Venues</a></li>
-                        <li><a href="#" class="footer-link">Galleries</a></li>
-                        <li><a href="#" class="footer-link">Jobs</a></li>
-                        <li><a href="#" class="footer-link">Tender</a></li>
-                        <li><a href="#" class="footer-link">Playing Conditions</a></li>
-                    </ul>
-                </div>
-                <!-- About -->
-                <div class="footer-column">
-                    <h3 class="footer-heading">ABOUT</h3>
-                    <ul class="footer-list">
-                        <li><a href="#" class="footer-link">History</a></li>
-                        <li><a href="#" class="footer-link">Anti Corruption</a></li>
-                        <li><a href="#" class="footer-link">Anti Racism</a></li>
-                        <li><a href="#" class="footer-link">Anti Doping</a></li>
-                        <li><a href="#" class="footer-link">RTI Application Form</a></li>
-                        <li><a href="#" class="footer-link">Annual Reports</a></li>
-                        <li><a href="#" class="footer-link">MCC Laws of Cricket</a></li>
-                    </ul>
-                </div>
-                <!-- BCCI -->
-                <div class="footer-column">
-                    <h3 class="footer-heading">BCCI</h3>
-                    <ul class="footer-list">
-                        <li><a href="#" class="footer-link">Men</a></li>
-                        <li><a href="#" class="footer-link">Women</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <div class="footer-bottom">
-                        <div class="footer-bottom-links">
-                            <a href="#" class="footer-link">Terms & Conditions</a>
-                            <span class="footer-separator">|</span>
-                            <a href="#" class="footer-link">Privacy Policy</a>
-                        </div>
-                        <div class="footer-copyright">
-                            © Copyrights BCCI 2025. All Rights Reserved.
-                        </div>
-                    </div>
-                </div>
+            <div class="footer-copyright">
+              © Copyrights BCCI 2025. All Rights Reserved.
             </div>
-        </footer>
-    </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script defer="defer" src="https://demo.sportz.io/bcci/games/components.c70831ae256473377bfe.js"></script>
-    <script defer="defer" src="https://demo.sportz.io/bcci/games/node_vendors.f6e0676915e649826b4b.js"></script>
-    <script defer="defer" src="https://demo.sportz.io/bcci/games/main.20d9d9cc4d66d221f718.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script defer="defer" src="https://demo.sportz.io/bcci/games/components.c70831ae256473377bfe.js"></script>
+  <script defer="defer" src="https://demo.sportz.io/bcci/games/node_vendors.f6e0676915e649826b4b.js"></script>
+  <script defer="defer" src="https://demo.sportz.io/bcci/games/main.4281f5bfd60a43884885.js"></script>
 </body>
 
 </html>
