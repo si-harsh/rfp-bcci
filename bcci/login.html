@@ -15,7 +15,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200;300;400;500;600;700&family=Fjalla+One&family=Bebas+Neue:wght@400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/bcci/assets/css/style.css?v=4.1">
+    <link rel="stylesheet" href="/bcci/assets/css/style.css?v=4.3">
 </head>
 
 <body>
@@ -31,10 +31,10 @@
                 </svg>
 
                 <a href="/bcci/index.html" target="_blank" class="header-logo-section">
-                    <img src="/bcci/assets/images/logo.png?v=4.1" alt="BCCI" class="header-logo">
+                    <img src="/bcci/assets/images/logo.png?v=4.3" alt="BCCI" class="header-logo">
                 </a>
                 <a href="javascript:void(0)" target="_blank" class="header-user-section" style="pointer-events: none;">
-                    <img src="/bcci/assets/images/user.png?v=4.1" alt="User Icon" class="header-user-icon">
+                    <img src="/bcci/assets/images/user.png?v=4.3" alt="User Icon" class="header-user-icon">
                 </a>
             </div>
             <!-- Bottom Navigation -->
@@ -230,7 +230,7 @@
         </header>
         <div class="login-container">
             <div class="login-banner">
-                <img src="/bcci/assets/images/login-banner.png?v=4.1" alt="BCCI">
+                <img src="/bcci/assets/images/login-banner.png?v=4.3" alt="BCCI">
             </div>
         </div>
         <div class="otp-container">
@@ -319,10 +319,11 @@
                 });
             });
 
-            // Load saved theme
-            const savedTheme = localStorage.getItem('theme') || 'light';
+            // Set default theme as light
+            const savedTheme = 'light';
             document.body.setAttribute('data-theme', savedTheme);
             document.querySelector(`[data-theme="${savedTheme}"]`).classList.add('active');
+            localStorage.setItem('theme', savedTheme);
 
             // Expandable sections functionality
             const expandableSections = document.querySelectorAll('.nav-section.expandable');
