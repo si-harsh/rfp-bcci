@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPL</title>
-    <!-- <link rel="stylesheet" href="/assets/css/styles.css?v=1.5"> -->
+    <!-- <link rel="stylesheet" href="/assets/css/styles.css?v=4.1"> -->
     <link rel="stylesheet" href="/ipl/assets/css/login.css?v=1.11">
 </head>
 
@@ -41,18 +41,18 @@
                                         </g>
                                     </svg>
                                 </span>
+                            </span>
+                            <span class="toggle-knob toggle-knob-dark">
+                                <span class="icon-moon">
+                                    <!-- Moon SVG -->
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.5 11.5A6 6 0 016.5 3.5a5 5 0 108 8z" stroke="white"
+                                            stroke-width="2" fill="none" />
+                                    </svg>
                                 </span>
-                                <span class="toggle-knob toggle-knob-dark">
-                                    <span class="icon-moon">
-                                        <!-- Moon SVG -->
-                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M14.5 11.5A6 6 0 016.5 3.5a5 5 0 108 8z" stroke="white"
-                                                stroke-width="2" fill="none" />
-                                        </svg>
-                                    </span>
-                                </span>
-                               
+                            </span>
+
                             </span>
                         </div>
                     </div>
@@ -297,14 +297,14 @@
 
             <!-- OTP Verification Form -->
             <div class="login-form-container login-otp-container">
-                <div class="login-formlogin-otp-form">                    
-                    
+                <div class="login-formlogin-otp-form">
+
                     <h2 class="main-title login-otp-title">OTP VERIFICATION</h2>
-                    
+
                     <p class="login-otp-description">
                         Enter the OTP sent to 9167616039. Be careful not to share the code with anyone.
                     </p>
-                    
+
                     <div class="login-otp-inputs">
                         <input id="otp-input-1" type="text" class="login-otp-input" maxlength="1" value="4">
                         <input id="otp-input-2" type="text" class="login-otp-input" maxlength="1" value="4">
@@ -313,32 +313,36 @@
                         <input id="otp-input-5" type="text" class="login-otp-input" maxlength="1" value="1">
                         <input id="otp-input-6" type="text" class="login-otp-input" maxlength="1" value="2">
                     </div>
-                    
+
                     <div class="login-otp-resend">
                         <span>Didn't receive the OTP?</span>
                         <button class="login-otp-resend-btn">Resend OTP</button>
                     </div>
-                    
+
                     <div class="login-otp-timer">
                         Time Remaining : <span class="timer">20 sec</span>
                     </div>
-                    
+
                     <div class="login-otp-disclaimers">
-                        <div class="login-otp-disclaimer-item">          
-                            <input type="checkbox" id="disclaimer2" class="login-otp-disclaimer-checkbox">
-                            <label for="disclaimer2" class="login-otp-disclaimer-text">                 
-                                Disclaimer: Your information may be used by IPL and made available to our sponsors and third-parties to provide you with news and promotional information about IPL. For further information, please consult our Online Privacy Policy. <a href="#" class="privacy-link">Privacy Policy</a>.
-                            </label>
-                        </div>
-                        
                         <div class="login-otp-disclaimer-item">
                             <input type="checkbox" id="disclaimer2" class="login-otp-disclaimer-checkbox">
                             <label for="disclaimer2" class="login-otp-disclaimer-text">
-                                I acknowledge that I have read and agree to the <a href="#" class="terms-link">Terms Of Services</a> and <a href="#" class="privacy-link">Privacy Policy</a>.
+                                Disclaimer: Your information may be used by IPL and made available to our sponsors and
+                                third-parties to provide you with news and promotional information about IPL. For
+                                further information, please consult our Online Privacy Policy. <a href="#"
+                                    class="privacy-link">Privacy Policy</a>.
+                            </label>
+                        </div>
+
+                        <div class="login-otp-disclaimer-item">
+                            <input type="checkbox" id="disclaimer2" class="login-otp-disclaimer-checkbox">
+                            <label for="disclaimer2" class="login-otp-disclaimer-text">
+                                I acknowledge that I have read and agree to the <a href="#" class="terms-link">Terms Of
+                                    Services</a> and <a href="#" class="privacy-link">Privacy Policy</a>.
                             </label>
                         </div>
                     </div>
-                    
+
                     <button class="login-button login-verify-btn"><span>VERIFY & PROCEED</span></button>
                 </div>
             </div>
@@ -346,28 +350,31 @@
             <!-- Profile Completion Form -->
             <div class="login-form-container login-profile-container">
                 <div class="login-form login-profile-form">
-                    
+
                     <h2 class="main-title login-profile-title">COMPLETE YOUR PROFILE</h2>
-                    
+
                     <form class="login-profile-form-fields">
                         <div class="login-profile-form-group">
                             <label for="firstName" class="login-profile-form-label">First Name<span>*</span></label>
-                            <input type="text" id="firstName" name="firstName" class="login-profile-form-input" placeholder="Enter your first name" required>
+                            <input type="text" id="firstName" name="firstName" class="login-profile-form-input"
+                                placeholder="Enter your first name" required>
                         </div>
-                        
+
                         <div class="login-profile-form-group">
                             <label for="lastName" class="login-profile-form-label">Last Name<span>*</span></label>
-                            <input type="text" id="lastName" name="lastName" class="login-profile-form-input" placeholder="Enter your last name" required>
+                            <input type="text" id="lastName" name="lastName" class="login-profile-form-input"
+                                placeholder="Enter your last name" required>
                         </div>
-                        
+
                         <div class="login-profile-form-group">
                             <label for="mobileNo" class="login-profile-form-label">Mobile No.</label>
-                            <input type="tel" id="mobileNo" name="mobileNo" class="login-profile-form-input" value="9038344321" readonly>
+                            <input type="tel" id="mobileNo" name="mobileNo" class="login-profile-form-input"
+                                value="9038344321" readonly>
                             <div class="login-verified-badge">
                                 <span class="login-verified-icon"></span>
                             </div>
                         </div>
-                        
+
                         <div class="login-profile-form-group">
                             <label for="country" class="login-profile-form-label">Country<span>*</span></label>
                             <select id="country" name="country" class="login-profile-form-select" required>
@@ -378,7 +385,7 @@
                                 <option value="canada">Canada</option>
                             </select>
                         </div>
-                        
+
                         <div class="login-profile-form-group">
                             <label for="city" class="login-profile-form-label">City<span>*</span></label>
                             <select id="city" name="city" class="login-profile-form-select" required>
@@ -390,7 +397,7 @@
                                 <option value="kolkata">Kolkata</option>
                             </select>
                         </div>
-                        
+
                         <button type="submit" class="login-button login-submit-btn"><span>SUBMIT</span></button>
                     </form>
                 </div>
@@ -401,7 +408,7 @@
                 <div class="login-form login-preferences-form">
                     <h2 class="main-title login-preferences-title">MY PREFERENCES</h2>
                     <p class="login-preferences-subtitle">Select your Favourite Team</p>
-                    
+
                     <div class="login-team-list">
                         <div class="login-team-card login-team-card-grey" data-team="chennai-super-kings">
                             <img src="/ipl/assets/images/teams/csk-logo.png?v=1.1" alt="Chennai Super Kings">
@@ -434,13 +441,13 @@
                             <img src="/ipl/assets/images/teams/srh-logo.png?v=1.1" alt="Sunrisers Hyderabad">
                         </div>
                     </div>
-                    
+
                     <button class="login-button login-continue-btn"><span>CONTINUE</span></button>
                 </div>
             </div>
         </div>
 
-        
+
 
     </div>
 
@@ -496,15 +503,15 @@
 
         // Team selection functionality
         const teamCards = document.querySelectorAll('.login-team-card');
-        
+
         teamCards.forEach(card => {
-            card.addEventListener('click', function() {
+            card.addEventListener('click', function () {
                 // Remove active class from all cards
                 teamCards.forEach(c => c.classList.remove('active'));
-                
+
                 // Add active class to clicked card
                 this.classList.add('active');
-                
+
                 // Store selected team (optional)
                 const selectedTeam = this.getAttribute('data-team');
                 console.log('Selected team:', selectedTeam);
@@ -515,7 +522,7 @@
         const otpContainer = document.querySelector('.login-otp-container');
         const profileContainer = document.querySelector('.login-profile-container');
         const preferencesContainer = document.querySelector('.login-preferences-container');
-        
+
         const verifyBtn = document.querySelector('.login-verify-btn');
         const submitBtn = document.querySelector('.login-submit-btn');
         const continueBtn = document.querySelector('.login-continue-btn');
@@ -526,25 +533,25 @@
             otpContainer.style.display = 'none';
             profileContainer.style.display = 'none';
             preferencesContainer.style.display = 'none';
-            
+
             // Show the target container
             containerToShow.style.display = 'flex';
         }
 
         // OTP Verification -> Profile Completion
-        verifyBtn.addEventListener('click', function(e) {
+        verifyBtn.addEventListener('click', function (e) {
             e.preventDefault();
             showOnlyContainer(profileContainer);
         });
 
         // Profile Completion -> Team Preferences
-        submitBtn.addEventListener('click', function(e) {
+        submitBtn.addEventListener('click', function (e) {
             e.preventDefault();
             showOnlyContainer(preferencesContainer);
         });
 
         // Team Preferences -> Homepage
-        continueBtn.addEventListener('click', function(e) {
+        continueBtn.addEventListener('click', function (e) {
             e.preventDefault();
             // Redirect to homepage
             window.location.href = '/ipl/post-login.html';

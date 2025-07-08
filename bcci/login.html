@@ -15,7 +15,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200;300;400;500;600;700&family=Fjalla+One&family=Bebas+Neue:wght@400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/bcci/assets/css/style.css?v=3.5">
+    <link rel="stylesheet" href="/bcci/assets/css/style.css?v=4.1">
 </head>
 
 <body>
@@ -31,10 +31,10 @@
                 </svg>
 
                 <a href="/bcci/index.html" target="_blank" class="header-logo-section">
-                    <img src="/bcci/assets/images/logo.png" alt="BCCI" class="header-logo">
+                    <img src="/bcci/assets/images/logo.png?v=4.1" alt="BCCI" class="header-logo">
                 </a>
-                <a href="/bcci/game.html" target="_blank" class="header-user-section">
-                    <img src="/bcci/assets/images/user.png" alt="User Icon" class="header-user-icon">
+                <a href="javascript:void(0)" target="_blank" class="header-user-section" style="pointer-events: none;">
+                    <img src="/bcci/assets/images/user.png?v=4.1" alt="User Icon" class="header-user-icon">
                 </a>
             </div>
             <!-- Bottom Navigation -->
@@ -230,7 +230,7 @@
         </header>
         <div class="login-container">
             <div class="login-banner">
-                <img src="/bcci/assets/images/login-banner.png" alt="BCCI">
+                <img src="/bcci/assets/images/login-banner.png?v=4.1" alt="BCCI">
             </div>
         </div>
         <div class="otp-container">
@@ -270,209 +270,165 @@
                     </div>
                 </div>
 
-                <button class="otp-verify-btn">Verify</button>
+                <button class="otp-verify-btn" onclick="window.location.href='/bcci/login-form.html'">Verify</button>
             </div>
         </div>
     </div>
-
     <script>
-        // Modern Navigation Panel functionality
-        const navItems = document.querySelectorAll('.header-nav-item');
-        const modernNavPanel = document.getElementById('modernNavPanel');
-        const hamburgerIcon = document.querySelector('.header-hamburger-icon');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Modern Navigation Panel functionality
+            const navItems = document.querySelectorAll('.header-nav-item');
+            const modernNavPanel = document.getElementById('modernNavPanel');
+            const hamburgerIcon = document.querySelector('.header-hamburger-icon');
 
-        navItems.forEach(item => {
-            item.addEventListener('click', function () {
-                const navType = this.getAttribute('data-nav');
-                if (navType === 'menu') {
-                    // Toggle menu
-                    if (modernNavPanel.classList.contains('active')) {
-                        // Close menu
-                        modernNavPanel.classList.remove('active');
-                        hamburgerIcon.classList.remove('menu-open');
-                        this.classList.remove('menu-active');
-                        document.body.style.overflow = '';
+            navItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const navType = this.getAttribute('data-nav');
+                    if (navType === 'menu') {
+                        // Toggle menu
+                        if (modernNavPanel.classList.contains('active')) {
+                            // Close menu
+                            modernNavPanel.classList.remove('active');
+                            hamburgerIcon.classList.remove('menu-open');
+                            this.classList.remove('menu-active');
+                            document.body.style.overflow = '';
+                        } else {
+                            // Open menu
+                            modernNavPanel.classList.add('active');
+                            hamburgerIcon.classList.add('menu-open');
+                            this.classList.add('menu-active');
+                            document.body.style.overflow = 'hidden';
+                        }
                     } else {
-                        // Open menu
-                        modernNavPanel.classList.add('active');
-                        hamburgerIcon.classList.add('menu-open');
-                        this.classList.add('menu-active');
-                        document.body.style.overflow = 'hidden';
+                        navItems.forEach(nav => nav.classList.remove('active'));
+                        this.classList.add('active');
                     }
-                } else {
-                    navItems.forEach(nav => nav.classList.remove('active'));
-                    this.classList.add('active');
-                }
-            });
-        });
-
-        // Navigation panel will only close when hamburger icon is clicked
-        // Removed outside click functionality as per requirement
-
-        // Theme toggle functionality
-        const themeButtons = document.querySelectorAll('.theme-btn');
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        document.body.setAttribute('data-theme', currentTheme);
-
-        themeButtons.forEach(btn => {
-            if (btn.dataset.theme === currentTheme) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-
-            btn.addEventListener('click', function () {
-                const theme = this.dataset.theme;
-                document.body.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
-
-                themeButtons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-
-        // Expandable sections functionality
-        const expandableSections = document.querySelectorAll('.nav-section.expandable');
-        expandableSections.forEach(section => {
-            const header = section.querySelector('.nav-section-header');
-            header.addEventListener('click', function () {
-                section.classList.toggle('active');
-            });
-        });
-
-        // Search functionality
-        const searchInput = document.querySelector('.nav-search-input');
-        const navMenuItems = document.querySelectorAll('.nav-item, .nav-section');
-
-        searchInput.addEventListener('input', function () {
-            const searchTerm = this.value.toLowerCase();
-
-            navMenuItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(searchTerm)) {
-                    item.style.display = '';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-
-        // Language selector dropdown functionality
-        const languageSelector = document.querySelector('.language-selector');
-        const selectedLanguageSpan = document.querySelector('.selected-language');
-        const languageOptions = document.querySelectorAll('.language-option');
-        const dropdownArrow = document.querySelector('.dropdown-arrow');
-
-        if (languageSelector && selectedLanguageSpan && languageOptions.length > 0) {
-            // Toggle dropdown on selector click
-            languageSelector.addEventListener('click', function (e) {
-                e.stopPropagation();
-                console.log('Language selector clicked');
-
-                // Toggle active class
-                const isActive = this.classList.contains('active');
-                this.classList.toggle('active');
-
-                // Log current state
-                console.log('Dropdown is now:', isActive ? 'closed' : 'open');
-            });
-
-            // Handle language option selection
-            languageOptions.forEach(option => {
-                option.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    console.log('Language option clicked:', this.textContent);
-
-                    // Remove selected class from all options
-                    languageOptions.forEach(opt => opt.classList.remove('selected'));
-
-                    // Add selected class to clicked option
-                    this.classList.add('selected');
-
-                    // Update selected language text
-                    selectedLanguageSpan.textContent = this.textContent;
-
-                    // Close dropdown
-                    languageSelector.classList.remove('active');
-
-                    // Store selected language
-                    localStorage.setItem('selectedLanguage', this.dataset.lang);
-
-                    console.log('Language changed to:', this.textContent);
                 });
             });
 
-            // Close language dropdown when clicking outside
-            document.addEventListener('click', function (e) {
-                if (!languageSelector.contains(e.target)) {
-                    languageSelector.classList.remove('active');
-                }
+            // Theme toggle functionality
+            const themeBtns = document.querySelectorAll('.theme-btn');
+            themeBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    themeBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const theme = this.getAttribute('data-theme');
+                    document.body.setAttribute('data-theme', theme);
+                    localStorage.setItem('theme', theme);
+                });
             });
 
-            // Load saved language on page load
-            const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-            const savedOption = document.querySelector(`[data-lang="${savedLanguage}"]`);
+            // Load saved theme
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            document.querySelector(`[data-theme="${savedTheme}"]`).classList.add('active');
 
-            if (savedOption) {
-                languageOptions.forEach(opt => opt.classList.remove('selected'));
-                savedOption.classList.add('selected');
-                selectedLanguageSpan.textContent = savedOption.textContent;
-                console.log('Loaded saved language:', savedOption.textContent);
-            } else {
-                // Default to English if no saved language or invalid saved language
-                const defaultOption = document.querySelector('[data-lang="en"]');
-                if (defaultOption) {
-                    languageOptions.forEach(opt => opt.classList.remove('selected'));
-                    defaultOption.classList.add('selected');
-                    selectedLanguageSpan.textContent = defaultOption.textContent;
-                    localStorage.setItem('selectedLanguage', 'en');
-                    console.log('Set default language to English');
+            // Expandable sections functionality
+            const expandableSections = document.querySelectorAll('.nav-section.expandable');
+            expandableSections.forEach(section => {
+                const header = section.querySelector('.nav-section-header');
+                const content = section.querySelector('.nav-section-content');
+                const arrow = section.querySelector('.section-arrow');
+
+                header.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    // Close other sections
+                    expandableSections.forEach(otherSection => {
+                        if (otherSection !== section) {
+                            otherSection.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current section
+                    section.classList.toggle('active');
+                });
+            });
+
+            // Language selector dropdown functionality
+            const languageSelector = document.querySelector('.language-selector');
+            const selectedLanguageSpan = document.querySelector('.selected-language');
+            const languageOptions = document.querySelectorAll('.language-option');
+            const dropdownArrow = document.querySelector('.dropdown-arrow');
+
+            if (languageSelector && selectedLanguageSpan && languageOptions.length > 0) {
+                // Toggle dropdown on selector click
+                languageSelector.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    console.log('Language selector clicked');
+
+                    // Toggle active class
+                    const isActive = this.classList.contains('active');
+                    this.classList.toggle('active');
+
+                    // Log current state
+                    console.log('Dropdown is now:', isActive ? 'closed' : 'open');
+                });
+
+                // Handle language option selection
+                languageOptions.forEach(option => {
+                    option.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        console.log('Language option clicked:', this.textContent);
+
+                        // Remove selected class from all options
+                        languageOptions.forEach(opt => opt.classList.remove('selected'));
+
+                        // Add selected class to clicked option
+                        this.classList.add('selected');
+
+                        // Update selected language text
+                        selectedLanguageSpan.textContent = this.textContent;
+
+                        // Close dropdown
+                        languageSelector.classList.remove('active');
+
+                        // Store selected language
+                        localStorage.setItem('selectedLanguage', this.dataset.lang);
+
+                        console.log('Language changed to:', this.textContent);
+                    });
+                });
+
+                // Close language dropdown when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (!languageSelector.contains(e.target)) {
+                        languageSelector.classList.remove('active');
+                    }
+                });
+
+                // Load saved language on page load
+                const savedLanguage = localStorage.getItem('selectedLanguage');
+                if (savedLanguage) {
+                    const savedOption = document.querySelector(`[data-lang="${savedLanguage}"]`);
+                    if (savedOption) {
+                        languageOptions.forEach(opt => opt.classList.remove('selected'));
+                        savedOption.classList.add('selected');
+                        selectedLanguageSpan.textContent = savedOption.textContent;
+                    }
                 }
             }
-        } else {
-            console.error('Language selector elements not found');
-        }
 
-        // OTP Input functionality
-        const otpInputs = document.querySelectorAll('.otp-input');
+            // OTP input functionality
+            const otpInputs = document.querySelectorAll('.otp-input');
+            otpInputs.forEach((input, index) => {
+                input.addEventListener('input', function () {
+                    if (this.value.length === 1) {
+                        if (index < otpInputs.length - 1) {
+                            otpInputs[index + 1].focus();
+                        }
+                    }
+                });
 
-        otpInputs.forEach((input, index) => {
-            input.addEventListener('input', function (e) {
-                const value = e.target.value;
-
-                // Only allow numbers
-                if (!/^[0-9]$/.test(value)) {
-                    e.target.value = '';
-                    return;
-                }
-
-                // Move to next input
-                if (value && index < otpInputs.length - 1) {
-                    otpInputs[index + 1].focus();
-                }
-            });
-
-            input.addEventListener('keydown', function (e) {
-                // Move to previous input on backspace
-                if (e.key === 'Backspace' && !e.target.value && index > 0) {
-                    otpInputs[index - 1].focus();
-                }
+                input.addEventListener('keydown', function (e) {
+                    if (e.key === 'Backspace' && !this.value && index > 0) {
+                        otpInputs[index - 1].focus();
+                    }
+                });
             });
         });
-
-        // Timer functionality
-        let timeLeft = 30;
-        const timerElement = document.querySelector('.timer-text');
-
-        const timer = setInterval(() => {
-            timeLeft--;
-            timerElement.textContent = `Time remaining ${timeLeft} sec`;
-
-            if (timeLeft <= 0) {
-                clearInterval(timer);
-                timerElement.textContent = 'Time expired';
-            }
-        }, 1000);
     </script>
 </body>
 

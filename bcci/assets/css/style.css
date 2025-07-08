@@ -120,39 +120,75 @@ body[data-theme="dark"] {
     --light-blue: #1a1a2e;
     --white: #ffffff;
     --black: #000000;
-
-    /* Dark Theme Text Colors */
     --navy: #ffffff;
     --navy-dark: #e0e0e0;
     --gray: #b0b0b0;
     --gray-dark: #d0d0d0;
     --gray-darker: #ffffff;
     --text-dark: #ffffff;
-
-    /* Dark Theme Card/Surface Colors */
     --off-white: #2a2a3e;
     --background-light: #1a1a2e;
     --background-very-light: #2a2a3e;
     --border-light: #404040;
     --border-light-gray: #505050;
     --border-gray: #404040;
-
-    /* Dark Theme Gradients */
     --gradient-light-1: #2a2a3e;
     --gradient-light-2: #1a1a2e;
     --light-blue-accent: #2a2a3e;
-
-    /* Dark Theme Shadows */
     --black-shadow: rgba(255, 255, 255, 0.1);
-
-    /* Dark Theme Blue Variants */
     --blue-medium: #4a90e2;
     --blue-dark: #357abd;
     --blue-accent: #4a90e2;
-
-    /* Dark Theme Error Colors */
     --error-background: #2d1b1b;
     --error-red: #ff6b6b;
+
+    /* New dark theme colors for login pages */
+    background: #0a0a0a;
+}
+
+/* Dark mode styles for login pages */
+body[data-theme="dark"] .login-main-content {
+    background: var(--background-light);
+}
+
+body[data-theme="dark"] .login-form-section {
+    background: var(--off-white);
+}
+
+/* Dark mode input colors */
+body[data-theme="dark"] .login-input,
+body[data-theme="dark"] .login-phone-input,
+body[data-theme="dark"] .login-dropdown-selected,
+body[data-theme="dark"] .login-dropdown-option,
+body[data-theme="dark"] .search-input {
+    color: var(--dark-gray);
+}
+
+body[data-theme="dark"] .login-dropdown-option {
+    color: var(--navy);
+    border-bottom: 1px solid var(--border-light-gray);
+}
+
+body[data-theme="dark"] .login-dropdown-option:hover {
+    background: var(--gold-variant);
+    color: var(--white);
+}
+
+body[data-theme="dark"] .tab-navigation {
+    background: var(--background-light);
+    border-bottom: 1px solid var(--border-gray);
+}
+
+body[data-theme="dark"] .tab-btn {
+    color: var(--white);
+}
+
+body[data-theme="dark"] .tab-btn.active {
+    color: #EF3F24;
+}
+
+body[data-theme="dark"] .player-card {
+    background: var(--off-white);
 }
 
 /* ==========================================================================
@@ -547,21 +583,6 @@ h2 {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0)
-}
-
-/* For screens smaller than 375px */
-@media screen and (max-width: 374px) {
-    .header-full-menu {
-        left: 0;
-        right: 0;
-        width: 100%;
-        max-width: 100%;
-        transform: translateY(100%);
-    }
-
-    .header-full-menu.active {
-        transform: translateY(0);
-    }
 }
 
 .header-menu-header {
@@ -1737,7 +1758,7 @@ body[data-theme="dark"] .gallery-item {
 
 .player-item {
     position: relative;
-    width: 85%;
+    width: 75%;
     flex-shrink: 0;
     transition: all .3s ease;
     cursor: pointer;
@@ -3091,7 +3112,6 @@ body[data-theme="dark"] .video-highlight-section {
       ========================================================================== */
 
 .otp-container {
-    background: var(--white);
     width: 100%;
     max-width: 375px;
     margin: 0 auto;
@@ -3111,13 +3131,12 @@ body[data-theme="dark"] .otp-container {
 
 .otp-header {
     margin-bottom: 30px;
-    text-align: center;
 }
 
 .otp-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--navy);
     margin: 0 0 10px 0;
     text-transform: uppercase;
@@ -3142,29 +3161,19 @@ body[data-theme="dark"] .otp-container {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 20px;
 }
 
 .otp-input {
-    width: 50px;
+    width: 60px;
     height: 50px;
-    border: 1px solid var(--border-light-gray);
-    border-radius: 8px;
+    border: 1px solid #1AB85B;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
     color: var(--text-dark);
-    background: var(--white);
     transition: all 0.3s ease;
     outline: none;
-}
-
-/* Dark mode OTP input styling */
-body[data-theme="dark"] .otp-input {
-    background: var(--background-very-light);
-    border: 1px solid var(--border-light-gray);
-    color: var(--text-dark);
 }
 
 .otp-input:focus {
@@ -3178,32 +3187,30 @@ body[data-theme="dark"] .otp-input {
 }
 
 .otp-resend {
-    text-align: center;
+    text-align: right;
     margin-bottom: 25px;
 }
 
 .resend-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    color: var(--gray-dark);
-    margin: 0 0 5px 0;
+    font-size: 12px;
+    color: #00071F;
+    margin-bottom: 10px;
 }
 
 .resend-link {
-    color: var(--gold-variant);
+    color: #00071F;
     cursor: pointer;
     text-decoration: underline;
-    font-weight: 600;
-}
-
-.resend-link:hover {
-    color: var(--blue-accent);
+    font-weight: 700;
+    font-size: 12px;
+    margin-left: 5px;
 }
 
 .timer-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
-    color: var(--gray-dark);
+    color: #00071F;
     margin: 0;
 }
 
@@ -3221,30 +3228,26 @@ body[data-theme="dark"] .otp-input {
 }
 
 .terms-checkbox {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     margin-top: 2px;
-    accent-color: var(--gold-variant);
+    accent-color: #EF3F24;
     cursor: pointer;
 }
 
 .terms-label {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    color: var(--gray-dark);
+    color: #00071F;
     line-height: 1.5;
     cursor: pointer;
     flex: 1;
 }
 
 .terms-link {
-    color: var(--gold-variant);
+    color: #EF3F24;
     text-decoration: underline;
     font-weight: 600;
-}
-
-.terms-link:hover {
-    color: var(--blue-accent);
 }
 
 .login-banner {
@@ -3258,30 +3261,15 @@ body[data-theme="dark"] .otp-input {
 }
 
 .otp-verify-btn {
-    background: var(--gold-variant);
-    color: var(--white);
+    background: #C0995A;
+    color: #00071F;
     border: none;
-    border-radius: 8px;
-    padding: 15px 30px;
+    padding: 15px;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
-    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 20px;
     width: 100%;
-}
-
-.otp-verify-btn:hover {
-    background: var(--gold);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-}
-
-.otp-verify-btn:active {
-    transform: translateY(0);
 }
 
 /* Animation for OTP inputs */
@@ -3310,6 +3298,508 @@ body[data-theme="dark"] .otp-input {
 .otp-input.error:focus {
     border-color: var(--error-red);
     box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* ==========================================================================
+      LOGIN PAGE STYLES
+      ========================================================================== */
+
+/* Dark mode login main content styling */
+body[data-theme="dark"] .login-main-content {
+    background: var(--background-light);
+}
+
+.login-form-section {
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-banner-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-banner-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--black-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-banner-image:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px var(--black-shadow);
+}
+
+.login-banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.login-banner-image:hover img {
+    transform: scale(1.02);
+}
+
+/* Dark mode login form section styling */
+body[data-theme="dark"] .login-form-section {
+    background: var(--off-white);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.login-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--gray-dark);
+    margin: 0;
+    line-height: 1.5;
+    transition: color 0.3s ease;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Registration Form Specific Styles */
+.registration-form {
+    gap: 20px;
+}
+
+/* Login Custom Dropdown Styles */
+.login-custom-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.login-phone-input-container {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    position: relative;
+    background: var(--white);
+    transition: all 0.3s ease;
+}
+
+.login-phone-dropdown {
+    flex-shrink: 0;
+    width: 100px;
+}
+
+.login-dropdown-selected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    height: 45px;
+    box-sizing: border-box;
+}
+
+.login-phone-dropdown .login-dropdown-selected {
+    border-right: none;
+    position: relative;
+    border-right: 1px solid var(--border-gray);
+}
+
+.login-dropdown-arrow {
+    color: var(--gray);
+    transition: transform 0.3s ease;
+}
+
+.login-dropdown-selected.open .login-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.login-dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+/* Login phone dropdown specific options width */
+.login-phone-dropdown .login-dropdown-options {
+    min-width: 150px;
+    width: auto;
+    left: 0;
+}
+
+/* Dark mode login dropdown options */
+body[data-theme="dark"] .login-dropdown-options {
+    background: var(--background-very-light);
+    border-color: var(--primary);
+}
+
+.login-dropdown-options.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.login-dropdown-option {
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--navy);
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.login-dropdown-option:last-child {
+    border-bottom: none;
+}
+
+.login-dropdown-option:hover {
+    background: var(--gold-variant);
+    color: var(--white);
+}
+
+/* Dark mode login dropdown option */
+body[data-theme="dark"] .login-dropdown-option {
+    color: var(--text-dark);
+    border-bottom-color: var(--border-light-gray);
+}
+
+body[data-theme="dark"] .login-dropdown-option:hover {
+    background: var(--background-light);
+}
+
+.login-selected-text,
+.login-flag-text {
+    flex: 1;
+    text-align: left;
+}
+
+/* Login Phone Input Field Styling */
+.login-phone-input {
+    border: 2px solid var(--border-gray);
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    flex: 1;
+    background: var(--white);
+    padding: 15px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--navy);
+    transition: all 0.3s ease;
+    outline: none;
+    height: 45px;
+    box-sizing: border-box;
+}
+
+.login-phone-input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.login-next-btn {
+    background: var(--gold-variant);
+    color: var(--navy);
+    margin-top: 10px;
+}
+
+/* Custom Dropdown Styles */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.phone-input-container {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    position: relative;
+    background: var(--white);
+    transition: all 0.3s ease;
+}
+
+.phone-dropdown {
+    flex-shrink: 0;
+    width: 100px;
+}
+
+.dropdown-selected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    height: 45px;
+    box-sizing: border-box;
+}
+
+.phone-dropdown .dropdown-selected {
+    border-right: none;
+    position: relative;
+}
+
+.phone-dropdown .dropdown-selected::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--border-gray);
+}
+
+/* Dark mode phone dropdown border */
+body[data-theme="dark"] .phone-dropdown .dropdown-selected::after {
+    background: var(--border-light-gray);
+}
+
+/* Dark mode dropdown styling */
+body[data-theme="dark"] .dropdown-selected {
+    background: var(--background-very-light);
+    border-color: var(--border-light-gray);
+    color: var(--text-dark);
+}
+
+body[data-theme="dark"] .phone-dropdown .dropdown-selected {
+    background: var(--background-very-light);
+}
+
+.dropdown-arrow {
+    color: var(--gray);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-selected.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+/* Phone dropdown specific options width */
+.phone-dropdown .dropdown-options {
+    min-width: 150px;
+    width: auto;
+    left: 0;
+}
+
+/* Dark mode dropdown options */
+body[data-theme="dark"] .dropdown-options {
+    background: var(--background-very-light);
+    border-color: var(--primary);
+}
+
+.dropdown-options.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-option {
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--navy);
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.dropdown-option:last-child {
+    border-bottom: none;
+}
+
+.dropdown-option:hover {
+    background: var(--gold-variant);
+    color: var(--white);
+}
+
+/* Dark mode dropdown option */
+body[data-theme="dark"] .dropdown-option {
+    color: var(--text-dark);
+    border-bottom-color: var(--border-light-gray);
+}
+
+body[data-theme="dark"] .dropdown-option:hover {
+    background: var(--background-light);
+}
+
+.selected-text,
+.flag-text {
+    flex: 1;
+    text-align: left;
+}
+
+/* Phone Input Field Styling */
+.phone-input {
+    border: 2px solid var(--border-gray);
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    flex: 1;
+    background: var(--white);
+    padding: 15px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--navy);
+    transition: all 0.3s ease;
+    outline: none;
+    height: 45px;
+    box-sizing: border-box;
+}
+
+/* Dark mode phone input styling */
+body[data-theme="dark"] .phone-input {
+    background: var(--background-very-light);
+    border-color: var(--border-light-gray);
+    color: var(--text-dark);
+}
+
+.phone-input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.phone-input::placeholder {
+    color: var(--gray);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.next-btn {
+    background: var(--gold-variant);
+    color: var(--navy);
+    margin-top: 10px;
+}
+
+.next-btn::before {
+    background: var(--gold-light);
+}
+
+.next-btn:hover {
+    box-shadow: 0 8px 25px rgba(192, 153, 90, 0.3);
+}
+
+.login-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.login-input-group.login-half-width {
+    flex: 1;
+}
+
+.login-input-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--navy);
+    transition: color 0.3s ease;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--navy);
+    transition: color 0.3s ease;
+}
+
+.login-input {
+    padding: 10px 15px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    background: var(--white);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.login-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    border: none;
+    padding: 15px 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
 }
 
 /* ==========================================================================
@@ -3530,11 +4020,6 @@ body[data-theme="dark"] .otp-input {
     width: 236px;
     z-index: 1;
     margin-bottom: -10px;
-}
-
-/* Dark mode navigation content styling */
-body[data-theme="dark"] .navigation-content {
-    background: var(--background-very-light);
 }
 
 .navigation-content.active {
@@ -4028,4 +4513,437 @@ body[data-theme="dark"] .terms-label {
 body[data-theme="dark"] .navigation-category .text {
     color: var(--navy-dark);
     transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+      LOGIN FORM STYLES
+      ========================================================================== */
+.login-main {
+    background: var(--light-blue);
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.login-form-container {
+    width: 100%;
+    max-width: 375px;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-form-row {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.form-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy-dark);
+    margin-bottom: 5px;
+}
+
+.form-input {
+    padding: 12px 16px;
+    border: 1px solid var(--border-light-gray);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--navy-dark);
+    background: var(--background-very-light);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(29, 81, 158, 0.1);
+    background: var(--white);
+}
+
+.form-input::placeholder {
+    color: var(--gray);
+    font-weight: 400;
+}
+
+.calendar-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+    pointer-events: none;
+}
+
+.country-code-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-right: 1px solid var(--border-light-gray);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.country-flag {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.dropdown-arrow {
+    color: var(--gray);
+    transition: transform 0.3s ease;
+}
+
+.phone-input {
+    border: none;
+    background: transparent;
+    padding: 12px 16px;
+    flex: 1;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--navy-dark);
+}
+
+.phone-input::placeholder {
+    color: var(--gray);
+    font-weight: 400;
+}
+
+/* Select Wrapper */
+.select-wrapper {
+    position: relative;
+}
+
+.form-select {
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    border: 1px solid var(--border-light-gray);
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--navy-dark);
+    background: var(--background-very-light);
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Dark mode form select styling */
+body[data-theme="dark"] .form-select {
+    background: var(--background-very-light);
+    border: 1px solid var(--border-light-gray);
+    color: var(--navy-dark);
+}
+
+.form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(29, 81, 158, 0.1);
+    background: var(--white);
+}
+
+.select-wrapper .dropdown-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+    pointer-events: none;
+}
+
+/* Submit Button */
+.login-submit-btn {
+    background: var(--gold-variant);
+    color: var(--navy);
+    border: none;
+    padding: 15px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+        TAB SYSTEM STYLES
+        ========================================================================== */
+
+.main-tabs-container {
+    max-width: 375px;
+    margin: 0 auto;
+}
+
+.tab-navigation {
+    display: flex;
+    background: var(--background-light);
+    border-bottom: 1px solid var(--border-gray);
+    margin-top: -50px;
+}
+
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    position: relative;
+    height: 45px;
+    padding-bottom: 10px;
+}
+
+.tab-btn.active {
+    color: #EF3F24;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #EF3F24;
+}
+
+.tab-content {
+    position: relative;
+    min-height: 400px;
+}
+
+.tab-panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.tab-panel.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+        FAVORITE PLAYERS STYLES
+        ========================================================================== */
+
+.players-main-content {
+    padding: 20px;
+    background: var(--background-very-light);
+    min-height: 600px;
+}
+
+.players-container {
+    max-width: 100%;
+}
+
+.players-header {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.players-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0 0 5px 0;
+}
+
+.players-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: var(--gray);
+    margin: 0 0 20px 0;
+    font-weight: 400;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+    z-index: 2;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 45px 12px 45px;
+    border: 2px solid var(--border-gray);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: var(--navy);
+    background: var(--white);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.player-card {
+    background: var(--white);
+    position: relative;
+}
+
+.player-card:before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: 6px;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    z-index: 1;
+    border: 2px solid var(--border-gray);
+    opacity: .7;
+}
+
+.player-card.following:before {
+    background: url('/bcci/assets/images/fav-star.png') no-repeat center center;
+    background-size: contain;
+    opacity: 1;
+    border: none;
+    height: 22px;
+    width: 22px;
+}
+
+.player-image {
+    position: relative;
+}
+
+.player-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player-star {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: var(--gold-variant);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.player-info {
+    padding: 15px;
+}
+
+.player-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.player-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.player-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--gold-variant);
+    background: var(--background-light);
+    padding: 2px 8px;
+    border-radius: 12px;
+    min-width: 32px;
+    text-align: center;
+}
+
+.player-team {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: var(--gray);
+    margin: 0 0 12px 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.follow-btn {
+    width: 100%;
+    background: #B2B2B2;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+}
+
+.follow-btn.following {
+    background: #EF3F24;
+}
+
+.player-card {
+    cursor: pointer;
+}
+
+.user-login-banner {
+    margin-top: -60px;
 }
